@@ -179,9 +179,11 @@ public class DeclarationRetryServiceTest {
 2020-06-17 11:48:05.186  INFO 2340 --- [           main] c.g.t.service.DeclarativeRetryService    : retry count is : 3 !
 2020-06-17 11:48:13.187  INFO 2340 --- [           main] c.g.t.service.DeclarativeRetryService    : message send successful，message is : hello world !
 ```
-count为1应该是第一次正常的业务执行，重第2次开始才算是重试。
+count为1应该是第一次正常的业务执行，从第2次开始才算是真正的重试。
 
 从日志打印时间来看，第一次重试是2s，第二次是4s，第三次是8s重试成功。
+
+**注意：第一次的业务调用也算是一次重试。**
 
 ### 命令式
 
